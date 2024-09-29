@@ -15,10 +15,15 @@ public class Admin {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "admin_id")
     private Long id;
+
     private String firstName;
+
     private String lastName;
+
     private String username;
+
     private String password;
+
 
     @Lob
     @Column(columnDefinition = "MEDIUMBLOB")

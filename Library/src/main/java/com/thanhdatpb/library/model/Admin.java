@@ -19,7 +19,11 @@ public class Admin {
     private String lastName;
     private String username;
     private String password;
+
+    @Lob
+    @Column(columnDefinition = "MEDIUMBLOB")
     private String image;
 
+    @ManyToMany(fetch = FetchType.EAGER)
     private Collection<Role> roles;
 }

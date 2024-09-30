@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication(scanBasePackages = "com.thanhdatpb.library.*" )
+@SpringBootApplication(scanBasePackages = {"com.thanhdatpb.library.*", "com.thanhdatpb.admin.*"} )
 @EnableJpaRepositories(value = "com.thanhdatpb.library.repository")
 @EntityScan(value = "com.thanhdatpb.library.model")
 public class AdminApplication {

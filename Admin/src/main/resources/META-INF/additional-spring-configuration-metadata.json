@@ -4,5 +4,10 @@
       "name": "spring.thymeleaf.content-type",
       "type": "java.lang.String",
       "description": "Description for spring.thymeleaf.content-type."
-  }
-] }
+    },
+    {
+      "name": "springframework.beans.factory.BeanCurrentlyInCreationException",
+      "type": "java.lang.String",
+      "description": "Description for springframework.beans.factory.BeanCurrentlyInCreationException."
+    }
+  ] }

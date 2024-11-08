@@ -6,12 +6,16 @@ import com.thanhdatpb.library.repository.AdminRepository;
 import com.thanhdatpb.library.repository.RoleRepository;
 import com.thanhdatpb.library.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 
 @Service
 public class AdminServiceImpl implements AdminService {
+    private BCryptPasswordEncoder passwordEncoder;
+
+
     @Autowired
     private AdminRepository adminRepository;
 
@@ -29,7 +33,7 @@ public class AdminServiceImpl implements AdminService {
         admin.setFirstName(adminDto.getFirstName());
         admin.setLastName(adminDto.getLastName());
         admin.setUsername(adminDto.getUsername());
-        admin.setPassword(adminDto.getPassword());
+        admin.setPassword(passwordEncoder.encode(adminDto.getPassword()));
         admin.setRoles(Collections.singletonList(roleRepository.findByName("ADMIN")));
         return adminRepository.save(admin);
     }

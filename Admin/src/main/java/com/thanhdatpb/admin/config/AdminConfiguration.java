@@ -16,6 +16,7 @@ import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 @EnableWebSecurity
 public class AdminConfiguration extends WebSecurityConfigurerAdapter{
 
+    @Override
     @Bean
     public UserDetailsService userDetailsService(){
         return new AdminServiceConfig();

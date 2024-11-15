@@ -5,7 +5,6 @@ import com.thanhdatpb.library.model.Admin;
 import com.thanhdatpb.library.repository.AdminRepository;
 import com.thanhdatpb.library.repository.RoleRepository;
 import com.thanhdatpb.library.service.AdminService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -16,11 +15,14 @@ public class AdminServiceImpl implements AdminService {
     private BCryptPasswordEncoder passwordEncoder;
 
 
-    @Autowired
-    private AdminRepository adminRepository;
+    private final AdminRepository adminRepository;
 
-    @Autowired
-    private RoleRepository roleRepository;
+    private final RoleRepository roleRepository;
+
+    public AdminServiceImpl(AdminRepository adminRepository, RoleRepository roleRepository) {
+        this.adminRepository = adminRepository;
+        this.roleRepository = roleRepository;
+    }
 
     @Override
     public Admin finByUsername(String username) {

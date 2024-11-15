@@ -2,9 +2,9 @@ package com.thanhdatpb.library.model;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+
+import java.util.Collection;
 
 @Data @NoArgsConstructor @AllArgsConstructor
 @Entity
@@ -16,5 +16,10 @@ public class Role {
     private Long id;
 
     private String name;
+
+    @Getter
+    @Setter
+    @ManyToMany( mappedBy = "roles" )
+    private Collection<Admin> admins;
 
 }

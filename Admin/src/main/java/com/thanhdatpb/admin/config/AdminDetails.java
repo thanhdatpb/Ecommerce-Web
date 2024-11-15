@@ -11,7 +11,11 @@ import java.util.Collection;
 import java.util.List;
 
 public class AdminDetails implements UserDetails {
-    private Admin admin;
+    private final Admin admin;
+
+    public AdminDetails(Admin admin) {
+        this.admin = admin;
+    }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

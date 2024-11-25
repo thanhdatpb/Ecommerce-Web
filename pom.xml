@@ -8,7 +8,7 @@
   <version>1.0-SNAPSHOT</version>
   <name>Archetype - Ecommerce-Web</name>
   <url>https://maven.apache.org</url>
-    <packaging>pom</packaging>
+    <packaging>pom</packaging><!-- Correct packaging type for parent project -->
 
   <modules>
       <module>Library</module>
